@@ -1,0 +1,44 @@
+.wrapper {
+  --max-width: 980px;
+  --min-margin: 1em;
+
+  width: min(var(--max-width), 100% - 2 * var(--min-margin));
+  margin-inline: auto;
+}
+
+.content-grid {
+  --max-width: 980px;
+  --min-margin: 1em;
+
+  display: grid;
+  grid-template-columns:
+    minmax(var(--min-margin), 1fr) minmax(auto, var(--max-width)) minmax(var(--min-margin), 1fr);
+
+  text-align: center;
+}
+
+.content-grid>* {
+  grid-column: 2;
+}
+
+.content-grid>.full {
+  grid-column: 1 / -1;
+}
+
+header {
+  padding: 0.5em;
+  background-color: lightgrey;
+}
+
+header nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em;
+}
+
+header nav a {
+  padding: 4px;
+  border-radius: 4px;
+  background-color: slategray;
+  color: white;
+}
