@@ -4,7 +4,7 @@ div.watcher-app-container {
   justify-content: center;
 }
 
-article.watcher-preview-container {
+.books-preview-container {
   display: flex;
   flex-direction: column;
   align-items: center;

@@ -8,10 +8,6 @@
 @import './base/layout.css';
 
 /* Components */
-@import './cmps/animal-list.css';
-@import './cmps/season-clock.css';
-@import './cmps/count-down.css';
-@import './cmps/watcher-app.css';
-@import 'cmps/watcher-app/WatcherPreview.css';
+@import './cmps/books-container.css';
 @import './cmps/mouse-monitor.css';
 @import './cmps/app-header.css';

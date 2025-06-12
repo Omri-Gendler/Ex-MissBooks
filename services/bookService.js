@@ -1,4 +1,17 @@
-import { utilService } from "../services/util.service.js"
+import { utilService } from "/util.service.js"
+import { storageService } from "../services/async-storage.service.js"
+
+export const bookService = {
+    query,
+    // getById,
+}
+
+const BOOK_KEY = 'bookDB'
+
+
+function query() {
+    return storageService.query(BOOK_KEY)
+}
 
 // Demo date 
 export const demoData = [

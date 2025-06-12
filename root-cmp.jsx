@@ -16,6 +16,7 @@ export function RootCmp() {
                 {page === 'home' && <HomePage />}
                 {page === 'about' && <AboutUs />}
                 {page === 'books' && <BookIndex />}
+
             </main>
         </section>
     )
