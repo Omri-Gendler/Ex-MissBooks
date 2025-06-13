@@ -7,7 +7,7 @@ import { BookIndex } from "./cmps/BookIndex.jsx"
 
 export function RootCmp() {
 
-    const [page, setPage] = useState('home')
+    const [page, setPage] = useState('books')
 
     return (
         <section>

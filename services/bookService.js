@@ -3,6 +3,7 @@ import { storageService } from "../services/async-storage.service.js"
 
 export const bookService = {
     query,
+    getDefaultFilter,
     // getById,
 }
 
@@ -11,6 +12,10 @@ const BOOK_KEY = 'bookDB'
 
 function query() {
     return storageService.query(BOOK_KEY)
+}
+
+function getDefaultFilter() {
+    return { title: '', maxPrice: '' }
 }
 
 // Demo date 
