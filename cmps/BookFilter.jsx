@@ -1,35 +1,41 @@
-const { useState, useEffect } = React
-
-export function BooksFilter({ defaultFilter, onSetFilter }) {
-
-    const [filterByToEdit, setFilterByToEdit] = useState({ ...defaultFilter })
-
-    const { title, maxPrice } = filterByToEdit
-
-    useEffect(() => {
-        onSetFilter(filterByToEdit)
-    }, [filterByToEdit])
+export function BooksFilter({ filterBy, onSetFilter }) {
 
     function handleChange({ target }) {
-        const field = target.name
-        const value = target.value
+        let { name: field, value, type } = target
 
-        setFilterByToEdit(prevFilter => ({ ...prevFilter, [field]: value }))
+        if (type === 'number') {
+            value = +value || ''
+        }
+
+        onSetFilter({ ...filterBy, [field]: value })
+    }
+
+    function onSubmit(ev) {
+        ev.preventDefault()
     }
 
     return (
-        <section>
-            <h2>Filter our cars</h2>
+        <section className="book-filter">
+            <h2>Filter Our Books</h2>
+            <form onSubmit={onSubmit}>
+                <label htmlFor="title">Title:</label>
+                <input
+                    type="text"
+                    id="title"
+                    name="title"
+                    value={filterBy.title} 
+                    onChange={handleChange}
+                />
 
-            <form>
-                <label htmlFor="title">Book title</label>
-                <input onChange={handleChange} value={title} name="title" id="title" />
-
-                <label htmlFor="maxPrice">Book price</label>
-                <input onChange={handleChange} value={maxPrice} name="maxPrice" id="maxPrice" type="number" />
-
-                <button>Submit</button>
+                <label htmlFor="maxPrice">Max Price:</label>
+                <input
+                    type="number"
+                    id="maxPrice"
+                    name="maxPrice"
+                    value={filterBy.maxPrice}
+                    onChange={handleChange}
+                />
             </form>
         </section>
-    )
+    );
 }

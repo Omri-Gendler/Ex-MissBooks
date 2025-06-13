@@ -1,10 +1,7 @@
-import { demoData } from "../services/bookService.js"
+import { demoBooks } from "../services/bookService.js"
 import { BookPreview } from "./BookPreview.jsx"
 
-const books = demoData
-
-export function BookList() {
-
+export function BookList({books}) {
 
     return (
         <section>

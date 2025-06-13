@@ -12,28 +12,38 @@ export function BookIndex() {
 
     useEffect(() => {
         loadBooks(filterBy)
-    }, [filterBy])
+    }, [])
 
     function loadBooks() {
         bookService.query()
-            .then(setBooks)
+            .then(booksFromService => {
+                console.log("🚀 ~ loadBooks ~ booksFromService:", booksFromService)
+                setBooks(booksFromService)
+            })
             .catch(err => console.error('Had issue to load the books', err))
     }
 
-    function onSetFilter({ filterBy }) {
-        setFilterBy(filterBy)
+    function onSetFilter(newFilter) {
+        setFilterBy(newFilter)
     }
 
     if (!books) return <div>Loading...</div>
+
+    const filteredBooks = books.filter(book => {
+        const titleMatch = (book.title || '').toLowerCase().includes((filterBy.title || '').toLowerCase())
+        const priceMatch = filterBy.maxPrice ? book.listPrice.amount <= filterBy.maxPrice : true
+        return titleMatch && priceMatch
+    })
+
     return (
 
         <section>
 
             <BooksFilter
-                defaultFilter={filterBy}
+                filterBy={filterBy}
                 onSetFilter={onSetFilter}
             />
-            <BookList books={books} />
+            <BookList books={filteredBooks} />
         </section>
     )
 }

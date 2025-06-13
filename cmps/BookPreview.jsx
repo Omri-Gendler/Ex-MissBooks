@@ -1,11 +1,13 @@
-
-
 export function BookPreview({ book }) {
     return (
-        <div className="books-preview-container">
-            {book.title}
-            {book.id}
-            {book.listPrice}
-        </div>
+        <article className="book-preview">
+
+            <img src={book.thumbnail}/>
+
+            <h3>{book.title}</h3>
+
+            <p>Price: {book.listPrice.amount}{book.listPrice.currencyCode}</p>
+
+        </article>
     )
 }

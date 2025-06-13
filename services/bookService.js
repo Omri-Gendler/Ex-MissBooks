@@ -7,7 +7,22 @@ export const bookService = {
     // getById,
 }
 
+
 const BOOK_KEY = 'bookDB'
+
+_createBooks()
+
+function _createBooks() {
+    let books = JSON.parse(localStorage.getItem(BOOK_KEY))
+
+    if (!books || !books.length) {
+        const demoBooks = [
+            { id: '1', title: 'Harry Potter', listPrice: { amount: 50, currencyCode: '$', thumbnail: 'img/1.jpg' } },
+            { id: '2', title: 'Elon Musk', listPrice: { amount: 80, currencyCode: '$', thumbnail: '/img/1.jpg' } },
+        ]
+        localStorage.setItem(BOOK_KEY, JSON.stringify(demoBooks))
+    }
+}
 
 
 function query() {
@@ -18,8 +33,3 @@ function getDefaultFilter() {
     return { title: '', maxPrice: '' }
 }
 
-// Demo date 
-export const demoData = [
-    { id: '1', title: 'Harry Potter', listPrice: '50$' },
-    { id: '2', title: 'Elon Musk', listPrice: '50$' },
-]
