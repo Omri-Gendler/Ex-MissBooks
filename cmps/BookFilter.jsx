@@ -19,7 +19,7 @@ export function BooksFilter({ filterBy, onSetFilter }) {
             <h2>Filter Our Books</h2>
             <form onSubmit={onSubmit}>
                 <label htmlFor="title">Title:</label>
-                <input
+                <input className="input"
                     type="text"
                     id="title"
                     name="title"
@@ -28,7 +28,7 @@ export function BooksFilter({ filterBy, onSetFilter }) {
                 />
 
                 <label htmlFor="maxPrice">Max Price:</label>
-                <input
+                <input className="input"
                     type="number"
                     id="maxPrice"
                     name="maxPrice"
