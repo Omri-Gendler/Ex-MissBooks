@@ -17,8 +17,16 @@ function _createBooks() {
 
     if (!books || !books.length) {
         const demoBooks = [
-            { id: '1', title: 'Harry Potter', listPrice: { amount: 50, currencyCode: '$' }, thumbnail: 'img/1.jpg' },
-            { id: '2', title: 'Elon Musk', listPrice: { amount: 80, currencyCode: '$' }, thumbnail: 'img/2.jpg' },
+            { id: '1', title: 'Harry Potter', listPrice: { amount: 50, currencyCode: '$' }, thumbnail: `img/1.jpg` },
+            { id: '2', title: 'Elon Musk', listPrice: { amount: 80, currencyCode: '$' }, thumbnail: `img/2.jpg` },
+            { id: '3', title: 'Elon Musk', listPrice: { amount: 80, currencyCode: '$' }, thumbnail: `img/3.jpg` },
+            { id: '4', title: 'Elon Musk', listPrice: { amount: 80, currencyCode: '$' }, thumbnail: `img/4.jpg` },
+            { id: '5', title: 'Elon Musk', listPrice: { amount: 80, currencyCode: '$' }, thumbnail: `img/5.jpg` },
+            { id: '6', title: 'Elon Musk', listPrice: { amount: 80, currencyCode: '$' }, thumbnail: `img/6.jpg` },
+            { id: '7', title: 'Elon Musk', listPrice: { amount: 80, currencyCode: '$' }, thumbnail: `img/7.jpg` },
+            { id: '8', title: 'Elon Musk', listPrice: { amount: 80, currencyCode: '$' }, thumbnail: `img/8.jpg` },
+            { id: '9', title: 'Elon Musk', listPrice: { amount: 80, currencyCode: '$' }, thumbnail: `img/9.jpg` },
+            { id: '10', title: 'Elon Musk', listPrice: { amount: 80, currencyCode: '$' }, thumbnail: `img/10.jpg` },
         ]
         localStorage.setItem(BOOK_KEY, JSON.stringify(demoBooks))
     }
