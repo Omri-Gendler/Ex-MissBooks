@@ -18,7 +18,7 @@ function _createBooks() {
     if (!books || !books.length) {
         const demoBooks = [
             { id: '1', title: 'Harry Potter', listPrice: { amount: 50, currencyCode: '$' }, thumbnail: 'img/1.jpg' },
-            { id: '2', title: 'Elon Musk', listPrice: { amount: 80, currencyCode: '$' }, thumbnail: '/img/2.jpg' },
+            { id: '2', title: 'Elon Musk', listPrice: { amount: 80, currencyCode: '$' }, thumbnail: 'img/2.jpg' },
         ]
         localStorage.setItem(BOOK_KEY, JSON.stringify(demoBooks))
     }
