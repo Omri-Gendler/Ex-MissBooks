@@ -4,6 +4,25 @@
   padding: 1em;
 }
 
+header {
+  padding: 0.5em;
+  background-color: lightgrey;
+}
+
+header nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em;
+}
+
+header nav a {
+  padding: 4px;
+  border-radius: 4px;
+  background-color: slategray;
+  color: white;
+}
+
+
 @media(max-width: 720px) {
   .app-header {
     color: var(--clr2bg);

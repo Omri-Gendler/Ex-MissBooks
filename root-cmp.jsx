@@ -10,7 +10,11 @@ export function RootCmp() {
     const [page, setPage] = useState('books')
 
     return (
-        <section>
+        <main className="content-grid">
+            {/* <header className="header flex align-center justify-between">
+            </header> */}
+
+
             <AppHeader onSetPage={(page) => setPage(page)} />
             <main>
                 {page === 'home' && <HomePage />}
@@ -18,6 +22,7 @@ export function RootCmp() {
                 {page === 'books' && <BookIndex />}
 
             </main>
-        </section>
+        </main>
+
     )
 }

@@ -1,0 +1,6 @@
+.book-preview {
+  display: grid;
+  padding: .5em;
+  font-weight: bold;
+  background: linear-gradient(#e66465, #9198e5);
+}

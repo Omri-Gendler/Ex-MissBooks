@@ -4,9 +4,8 @@ import { BookPreview } from "./BookPreview.jsx"
 export function BookList({books}) {
 
     return (
-        <section>
-            <ul className="books-preview-container">
-            <h1>My books</h1>
+        <section className="book-preview-container">
+            <ul className="book-list">
                 {books.map((book) => (
                     <li key={book.id}>
 

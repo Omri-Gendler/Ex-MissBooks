@@ -1,0 +1,15 @@
+.book-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 0.5em;
+
+    padding: 0.5em;
+}
+
+.book-list .btn-container {
+    display: flex;
+    justify-content: end;
+    gap: 0.3rem;
+
+    margin-block-start: 0.5em;
+}
