@@ -2,7 +2,7 @@ export function BookPreview({ book }) {
     return (
         <article className="book-preview">
 
-            <img src={book.thumbnail}/>
+            <img className="img" src={book.thumbnail}/>
 
             <h3>{book.title}</h3>
 

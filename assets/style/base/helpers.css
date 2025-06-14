@@ -61,3 +61,8 @@
 .fa.fa-behance::before {
     content: '\f1b4';
 }
+
+.img {
+    height: 100%;
+    width: 100%;
+}
