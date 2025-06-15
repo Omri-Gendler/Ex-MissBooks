@@ -6,6 +6,8 @@ export const bookService = {
     getDefaultFilter,
     makeLorem,
     getSetPageCount,
+    getPublishedDate,
+    isSale,
     // getById,
 }
 
@@ -86,4 +88,13 @@ function getSetPageCount(pageCount) {
     if (pageCount > 500) return 'Difficult'
     if (pageCount > 200) return 'Medium'
     if (pageCount > 100) return 'Easy'
+}
+
+function getPublishedDate(publishDate) {
+    if (publishDate > new Date() + 10) return 'Vintage'
+    if (publishDate < new Date() - 1) return 'New'
+}
+
+function isSale(isOnSale) {
+    if (isOnSale) return 'Sale'
 }

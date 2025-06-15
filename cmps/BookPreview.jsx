@@ -11,6 +11,8 @@ export function BookPreview({ book }) {
 
             <p>{book.listPrice.amount}{book.listPrice.currencyCode}</p>
             <p>{bookService.getSetPageCount(book.pageCount)}</p>
+            <p>{bookService.getPublishedDate(book.publishedDate)}</p>
+            <p>{bookService.isSale(book.listPrice.isOnSale)}</p>
 
         </article>
     )
