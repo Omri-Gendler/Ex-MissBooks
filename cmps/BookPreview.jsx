@@ -13,6 +13,7 @@ export function BookPreview({ book }) {
             <p>{bookService.getSetPageCount(book.pageCount)}</p>
             <p>{bookService.getPublishedDate(book.publishedDate)}</p>
             <p>{bookService.isSale(book.listPrice.isOnSale)}</p>
+            <button className="details" onClick={bookService.onDetails}>Details</button>
 
         </article>
     )

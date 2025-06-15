@@ -8,6 +8,7 @@ export const bookService = {
     getSetPageCount,
     getPublishedDate,
     isSale,
+    onDetails,
     // getById,
 }
 
@@ -97,4 +98,9 @@ function getPublishedDate(publishDate) {
 
 function isSale(isOnSale) {
     if (isOnSale) return 'Sale'
+}
+
+function onDetails() {
+    console.log('hi');
+    
 }
