@@ -3,6 +3,7 @@ const { useState, useEffect, Fragment } = React;
 import { BookList } from "./BookList.jsx"
 import { bookService } from "../services/bookService.js"
 import { BooksFilter } from "./BookFilter.jsx"
+import { BookDetails } from "./BookDetails.jsx"
 
 
 export function BookIndex() {
@@ -44,6 +45,7 @@ export function BookIndex() {
                 onSetFilter={onSetFilter}
             />
             <BookList books={filteredBooks} />
+
         </section>
     )
 }
