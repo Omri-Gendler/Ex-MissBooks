@@ -17,7 +17,7 @@ export function BookPreview({ book }) {
             <p>{book.listPrice.amount}{book.listPrice.currencyCode}</p>
             <p>{bookService.getSetPageCount(book.pageCount)}</p>
             <p>{bookService.getPublishedDate(book.publishedDate)}</p>
-            <p>{bookService.isSale(book.listPrice.isOnSale)}</p>
+            {book.listPrice.isOnSale && <span className="sale-sign">On Sale!</span>}
             <Link to={`/book/${book.id}`}>
                 <h3>{book.title}</h3>
                 <button>Details</button>

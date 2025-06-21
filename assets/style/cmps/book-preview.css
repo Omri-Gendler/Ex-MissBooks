@@ -6,9 +6,23 @@
   font-weight: bold;
   background: linear-gradient(#e66465, #9198e5);
   text-align: center;
+  height: 100%
 }
 
 .img {
   max-width: 150px;
   margin-bottom: 1em;
+}
+
+.sale {
+  color: red;
+  font-weight: bold;
+}
+
+.sale-sign {
+  background-color: red;
+  color: white;
+  padding: 2px 5px;
+  border-radius: 4px;
+  font-size: 0.8em;
 }
