@@ -20,7 +20,7 @@ export function BookDetails() {
     if (!book) return <div>Loading book details...</div>
 
     return (
-        <section className="book-details">
+        <section className="book-preview">
             <h1>{book.title}</h1>
             <h2>{book.subtitle}</h2>
             <img src={book.thumbnail} />
