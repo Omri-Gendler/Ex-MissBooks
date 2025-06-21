@@ -10,8 +10,7 @@ export function BookPreview({ book }) {
     return (
         <article className="book-preview">
 
-            <img className="img" src={book.thumbnail} />
-
+            <div className="book-image-container"><img src={book.thumbnail} /></div>
             <h3>{book.title}</h3>
 
             <p>{book.listPrice.amount}{book.listPrice.currencyCode}</p>

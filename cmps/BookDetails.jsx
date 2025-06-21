@@ -23,7 +23,6 @@ export function BookDetails() {
         <section className="book-preview">
             <h1>{book.title}</h1>
             <h2>{book.subtitle}</h2>
-            <img src={book.thumbnail} />
             <p>Price: {book.listPrice.amount}{book.listPrice.currencyCode}</p>
             <p>{book.description}</p>
         </section>
