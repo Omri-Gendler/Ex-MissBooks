@@ -1,32 +1,45 @@
-const { useState } = React
 
-import { HomePage } from "./cmps/HomePage.jsx"
 import { AppHeader } from "./cmps/AppHeader.jsx"
+// import { NotFound } from "./cmps/NotFound.jsx"
+import { HomePage } from "./cmps/HomePage.jsx"
 import { AboutUs } from "./cmps/AboutUs.jsx"
 import { BookIndex } from "./cmps/BookIndex.jsx"
+import { BookDetails } from "./cmps/BookDetails.jsx"
+// import { Team } from "./cmps/Team.jsx"
+// import { Vision } from "./cmps/Vision.jsx"
+// import { CarDetails } from "./pages/CarDetails.jsx"
+// import { CarEdit } from "./pages/CarEdit.jsx"
+// import { UserMsg } from "./cmps/UserMsg.jsx"
 
-const Router = ReactRouterDom.HashRouter
-const { Routes, Route } = ReactRouterDom
+const Router = ReactRouterDOM.HashRouter
+const { Routes, Route, Navigate } = ReactRouterDOM
+// const Router = ReactRouterDOM.BrowserRouter
 
 export function RootCmp() {
-
-    const [page, setPage] = useState('books')
 
     return (
         <Router>
             <section className="app">
-                <AppHeader onSetPage={(page) => setPage(page)} />
-                <main className="content-grid">
+                <AppHeader />
+                <main>
                     <Routes>
-                        <Route path="/" element={<Navigate to="/Home" />} />
-                        <Route path="/Home" element={<HomePage />} />
-                        <Route path="/About" element={<AboutUs />} />
+                        <Route path="/" element={<Navigate to="/home" />} />
+                        <Route path="/home" element={<HomePage />} />
+                        <Route path="/about" element={<AboutUs />}>
+                            {/* <Route path="/about/team" element={<Team />} />
+                            <Route path="/about/vision" element={<Vision />} /> */}
+                        </Route>
                         <Route path="/book" element={<BookIndex />} />
+                        <Route path="/book/:bookId" element={<BookDetails />} />
+                        {/* <Route path="/car/:carId" element={<CarDetails />} />
+                        <Route path="/car/edit" element={<CarEdit />} />
+                        <Route path="/car/edit/:carId" element={<CarEdit />} /> */}
 
-                        <Route path="/*" />
+                        {/* <Route path="*" element={<NotFound />} /> */}
                     </Routes>
                 </main>
+                {/* <UserMsg /> */}
             </section>
         </Router>
     )
-}
+} 

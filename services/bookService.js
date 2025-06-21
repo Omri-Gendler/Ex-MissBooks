@@ -1,6 +1,9 @@
 import { utilService } from "/util.service.js"
 import { storageService } from "../services/async-storage.service.js"
 
+const { Link, NavLink } = ReactRouterDOM
+
+
 export const bookService = {
     query,
     getDefaultFilter,
@@ -8,8 +11,7 @@ export const bookService = {
     getSetPageCount,
     getPublishedDate,
     isSale,
-    onDetails,
-    // getById,
+    getById,
 }
 
 
@@ -100,7 +102,6 @@ function isSale(isOnSale) {
     if (isOnSale) return 'Sale'
 }
 
-function onDetails() {
-    console.log('hi');
-    
+function getById(bookId) {
+    return storageService.get(BOOK_KEY, bookId);
 }

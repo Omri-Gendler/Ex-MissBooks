@@ -2,6 +2,6 @@
 export function AboutUs() {
 
     return (
-        <h1>About us</h1>
+        <img src="../img/react.jpg" />
     )
 }

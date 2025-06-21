@@ -1,4 +1,4 @@
-const { useState, useEffect, Fragment } = React;
+const { useState, useEffect, Fragment } = React
 
 import { BookList } from "./BookList.jsx"
 import { bookService } from "../services/bookService.js"
