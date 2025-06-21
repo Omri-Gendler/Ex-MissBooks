@@ -2,16 +2,34 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: .5em;
+  padding: 1em;
   font-weight: bold;
   background: linear-gradient(#e66465, #9198e5);
   text-align: center;
-  height: 100%
+  height: 100%;
+  width: 100%;
 }
 
-.img {
-  max-width: 150px;
+.book-image-container {
+  width: 160px;
+  width: 100%;
+  height: 240px;
+  overflow: hidden;
+  margin-inline: auto;
   margin-bottom: 1em;
+  border-radius: 4px;
+}
+
+.book-image-container img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.book-image-container img:hover {
+  transform: scale(1.05);
 }
 
 .sale {
@@ -25,4 +43,31 @@
   padding: 2px 5px;
   border-radius: 4px;
   font-size: 0.8em;
+}
+
+.book-preview {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.book-preview-content {
+  flex-grow: 1;
+  padding-block: 1em;
+}
+
+.book-preview .details-btn {
+  width: 100%;
+  padding: 10px;
+  margin-top: auto;
+  border: none;
+  background-color: #e9ecef;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.book-preview .details-btn:hover {
+  background-color: #dee2e6;
 }

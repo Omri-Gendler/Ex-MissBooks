@@ -11,5 +11,6 @@
 @import './cmps/books-container.css';
 @import './cmps/book-list.css';
 @import './cmps/mouse-monitor.css';
+@import './cmps/book-filter.css';
 @import './cmps/app-header.css';
 @import './cmps/book-preview.css';
