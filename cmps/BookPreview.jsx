@@ -19,7 +19,6 @@ export function BookPreview({ book }) {
             <p>{bookService.getPublishedDate(book.publishedDate)}</p>
             <p>{bookService.isSale(book.listPrice.isOnSale)}</p>
             <Link to={`/book/${book.id}`}>
-                <img src={book.thumbnail} alt={book.title} />
                 <h3>{book.title}</h3>
                 <button>Details</button>
             </Link>

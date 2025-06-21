@@ -8,11 +8,11 @@ export function AppHeader() {
         <header className="app-header container">
 
             <section>
-                <h1>React Car App</h1>
+                <h1>Miss Books</h1>
                 <nav className="app-nav">
                     <NavLink to="/home" >Home</NavLink>
                     <NavLink to="/about" >About</NavLink>
-                    <NavLink to="/book" >Cars</NavLink>
+                    <NavLink to="/book" >Books</NavLink>
                 </nav>
             </section>
 
