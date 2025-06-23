@@ -41,8 +41,26 @@ export function BookIndex() {
     }
 
     function onAddBook() {
+        const title = prompt('Enter title')
+        const price = +prompt('price')
 
-        console.log('hi')
+        const newBook = {
+            id: bookService.makeLorem(5),
+            listPrice: {
+                amount: price,
+                currencyCode: 'EUR',
+                isOnSale: true
+            },
+            thumbnail: "img/4.jpg"
+        }
+        bookService.post(newBook)
+            .then(() => {
+                console.log('Book added successfully!')
+                loadBooks()
+            })
+            .catch(err => {
+                console.error('Failed to add book', err)
+            })
     }
 
     if (!books) return <div>Loading...</div>
@@ -56,6 +74,7 @@ export function BookIndex() {
     return (
 
         <section>
+            <button onClick={onAddBook}>Add</button>
             <BooksFilter
                 filterBy={filterBy}
                 onSetFilter={onSetFilter}
@@ -63,7 +82,6 @@ export function BookIndex() {
             <BookList
                 books={filteredBooks}
                 onRemoveBook={onRemoveBook}
-                // onAddBook={onAddBook}
             />
         </section>
     )

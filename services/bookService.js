@@ -12,6 +12,7 @@ export const bookService = {
     isSale,
     getById,
     remove,
+    post,
 }
 
 
@@ -89,6 +90,10 @@ function makeLorem() {
 
 function remove(BOOK_KEY, bookId) {
     return storageService.remove(BOOK_KEY, bookId)
+}
+
+function post(newBook) {
+    return storageService.post(BOOK_KEY, newBook)
 }
 
 function getSetPageCount(pageCount) {
