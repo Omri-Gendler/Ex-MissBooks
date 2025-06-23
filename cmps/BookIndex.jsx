@@ -61,13 +61,9 @@ export function BookIndex() {
                 onSetFilter={onSetFilter}
             />
             <BookList
-<<<<<<<<< Temporary merge branch 1
-                books={books}
-=========
                 books={filteredBooks}
->>>>>>>>> Temporary merge branch 2
                 onRemoveBook={onRemoveBook}
-                onAddBook={onAddBook}
+                // onAddBook={onAddBook}
             />
         </section>
     )
