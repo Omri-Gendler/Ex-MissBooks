@@ -1,10 +1,11 @@
-const { useState, useEffect, Fragment } = React
-
 import { BookList } from "./BookList.jsx"
 import { bookService } from "../services/bookService.js"
-import { BooksFilter } from "./BookFilter.jsx"
+import { BooksFilter } from "../cmps/BookFilter.jsx"
 import { BookDetails } from "./BookDetails.jsx"
 
+const { useState, useEffect, Fragment } = React
+const { Link, Outlet } = ReactRouterDOM
+const BOOK_KEY = 'bookDB'
 
 export function BookIndex() {
 
@@ -28,6 +29,26 @@ export function BookIndex() {
         setFilterBy(newFilter)
     }
 
+    function onRemoveBook(bookId) {
+
+        bookService.remove(BOOK_KEY, bookId)
+            .then(() => {
+                setBooks(books => books.filter(book => book.id !== bookId))
+            })
+            .catch(err => {
+                console.log('err:', err)
+            })
+    }
+
+    function onAddBook(newBook) {
+
+        bookService.post(BOOK_KEY, newBook)
+            .then(setBooks)
+            .catch(err => {
+                console.log('err:', err)
+            })
+    }
+
     if (!books) return <div>Loading...</div>
 
     const filteredBooks = books.filter(book => {
@@ -39,13 +60,15 @@ export function BookIndex() {
     return (
 
         <section>
-
             <BooksFilter
                 filterBy={filterBy}
                 onSetFilter={onSetFilter}
             />
-            <BookList books={filteredBooks} />
-
+            <BookList
+                books={books}
+                onRemoveBook={onRemoveBook}
+                onAddBook={onAddBook}
+            />
         </section>
     )
 }

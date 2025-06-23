@@ -16,25 +16,33 @@ export function BooksFilter({ filterBy, onSetFilter }) {
 
     return (
         <section className="book-filter">
+            <button onClick={() => onAddBook()}>
+                Add
+            </button>
             <h2>Filter Our Books</h2>
-            <form onSubmit={onSubmit}>
-                <label htmlFor="title">Title:</label>
-                <input className="input"
-                    type="text"
-                    id="title"
-                    name="title"
-                    value={filterBy.title}
-                    onChange={handleChange}
-                />
+            <form className="form-row" onSubmit={onSubmit}>
+                <div className="input-group">
 
-                <label htmlFor="maxPrice">Max Price:</label>
-                <input className="input"
-                    type="number"
-                    id="maxPrice"
-                    name="maxPrice"
-                    value={filterBy.maxPrice}
-                    onChange={handleChange}
-                />
+                    <label htmlFor="title">Title:</label>
+                    <input className="input"
+                        type="text"
+                        id="title"
+                        name="title"
+                        value={filterBy.title}
+                        onChange={handleChange}
+                    />
+                </div>
+                <div className="input-group">
+
+                    <label htmlFor="maxPrice">Max Price:</label>
+                    <input className="input"
+                        type="number"
+                        id="maxPrice"
+                        name="maxPrice"
+                        value={filterBy.maxPrice}
+                        onChange={handleChange}
+                    />
+                </div>
             </form>
         </section>
     );
