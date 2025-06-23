@@ -40,13 +40,9 @@ export function BookIndex() {
             })
     }
 
-    function onAddBook(newBook) {
+    function onAddBook() {
 
-        bookService.post(BOOK_KEY, newBook)
-            .then(setBooks)
-            .catch(err => {
-                console.log('err:', err)
-            })
+        console.log('hi')
     }
 
     if (!books) return <div>Loading...</div>
@@ -67,8 +63,8 @@ export function BookIndex() {
             <BookList
                 books={filteredBooks}
                 onRemoveBook={onRemoveBook}
-                onAddBook={onAddBook}
             />
+
         </section>
     )
 }

@@ -16,9 +16,6 @@ export function BooksFilter({ filterBy, onSetFilter }) {
 
     return (
         <section className="book-filter">
-            <button onClick={() => onAddBook()}>
-                Add
-            </button>
             <h2>Filter Our Books</h2>
             <form className="form-row" onSubmit={onSubmit}>
                 <div className="input-group">
