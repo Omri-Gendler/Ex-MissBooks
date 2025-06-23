@@ -64,11 +64,8 @@ export function BookIndex() {
                 filterBy={filterBy}
                 onSetFilter={onSetFilter}
             />
-            <BookList
-                books={filteredBooks}
-                onRemoveBook={onRemoveBook}
-                onAddBook={onAddBook}
-            />
+            <BookList books={filteredBooks} />
+
         </section>
     )
 }
