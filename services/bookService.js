@@ -3,7 +3,6 @@ import { storageService } from "../services/async-storage.service.js"
 
 const { Link, NavLink } = ReactRouterDOM
 
-
 export const bookService = {
     query,
     getDefaultFilter,
@@ -12,6 +11,7 @@ export const bookService = {
     getPublishedDate,
     isSale,
     getById,
+    remove,
 }
 
 
@@ -87,6 +87,10 @@ function makeLorem() {
     return utilService.makeLorem(2)
 }
 
+function remove(BOOK_KEY, bookId) {
+    return storageService.remove(BOOK_KEY, bookId)
+}
+
 function getSetPageCount(pageCount) {
     if (pageCount > 500) return 'Difficult'
     if (pageCount > 200) return 'Medium'
@@ -105,3 +109,4 @@ function isSale(isOnSale) {
 function getById(bookId) {
     return storageService.get(BOOK_KEY, bookId);
 }
+
