@@ -5,6 +5,8 @@ export function BackButton() {
 
     const navigate = useNavigate()
     return (
-        <button onClick={() => navigate('/book')}>Back</button>
+        <div className="action-buttons-container">
+            <button className="action-btn back-btn" onClick={() => navigate('/book')}>Back</button>
+        </div>
     )
 }

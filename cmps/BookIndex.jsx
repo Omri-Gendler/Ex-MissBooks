@@ -83,7 +83,9 @@ export function BookIndex() {
     return (
 
         <section>
-            <button onClick={onAddBook}>Add</button>
+            <div className="action-buttons-container">
+                <button className="action-btn back-btn" onClick={onAddBook}>Add</button>
+            </div>
             <BooksFilter
                 filterBy={filterBy}
                 onSetFilter={onSetFilter}

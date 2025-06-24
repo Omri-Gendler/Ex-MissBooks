@@ -73,3 +73,39 @@
 .book-preview .details-btn:hover {
   background-color: #dee2e6;
 }
+
+.action-buttons-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.action-btn {
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+
+  transition: background-color 0.2s ease-in-out, transform 0.1s ease-in-out;
+}
+
+.add-btn {
+  background-color: #28a745;
+}
+
+.back-btn {
+  background-color: #6c757d;
+}
+
+.action-btn:hover {
+  filter: brightness(1.1);
+}
+
+.action-btn:active {
+  transform: translateY(1px);
+  filter: brightness(0.9);
+}
