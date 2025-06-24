@@ -1,7 +1,6 @@
-
 export function HomePage() {
 
     return (
-        <img src="./img/react.jpg" />
+            <img src="./img/react.jpg" />
     )
 }

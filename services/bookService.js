@@ -124,4 +124,3 @@ function isSale(isOnSale) {
 function getById(bookId) {
     return storageService.get(BOOK_KEY, bookId);
 }
-
