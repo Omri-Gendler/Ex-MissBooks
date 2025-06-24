@@ -16,6 +16,7 @@ export function BookPreview({ book, onRemoveBook }) {
                 <p>{book.listPrice.amount}{book.listPrice.currencyCode}</p>
                 <p>{bookService.getSetPageCount(book.pageCount)}</p>
                 <p>{bookService.getPublishedDate(book.publishedDate)}</p>
+                <p>{bookService.makeLorem(20)}</p>
             </div>
             {book.listPrice.isOnSale && <span className="sale-sign">On Sale!</span>}
             <Link to={`/book/${book.id}`}>

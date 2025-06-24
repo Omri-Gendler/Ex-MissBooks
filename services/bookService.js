@@ -13,6 +13,8 @@ export const bookService = {
     getById,
     remove,
     post,
+    makeId,
+    getRandomIntInclusive,
 }
 
 
@@ -86,6 +88,14 @@ function getDefaultFilter() {
 
 function makeLorem() {
     return utilService.makeLorem(2)
+}
+
+function makeId() {
+    return utilService.makeId(5)
+}
+
+function getRandomIntInclusive() {
+    return utilService.getRandomIntInclusive(20, 600)
 }
 
 function remove(BOOK_KEY, bookId) {

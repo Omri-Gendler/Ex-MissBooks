@@ -45,13 +45,22 @@ export function BookIndex() {
         const price = +prompt('price')
 
         const newBook = {
-            id: bookService.makeLorem(5),
+            id: bookService.makeId(),
+            title,
+            subtitle: bookService.makeLorem(4),
+            authors: [
+                bookService.makeLorem(1)
+            ],
+            publishedDate: bookService.getRandomIntInclusive(1950, 2024),
+            description: bookService.makeLorem(20),
+            pageCount: bookService.getRandomIntInclusive(20, 600),
+            thumbnail: `img/1.jpg`,
+            language: "en",
             listPrice: {
                 amount: price,
-                currencyCode: 'EUR',
-                isOnSale: true
-            },
-            thumbnail: "img/4.jpg"
+                currencyCode: "EUR",
+                isOnSale: Math.random() > 0.7
+            }
         }
         bookService.post(newBook)
             .then(() => {
