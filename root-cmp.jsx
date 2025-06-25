@@ -4,6 +4,7 @@ import { HomePage } from "./cmps/HomePage.jsx"
 import { BookIndex } from "./cmps/BookIndex.jsx"
 import { BookDetails } from "./cmps/BookDetails.jsx"
 import { BackButton } from "./cmps/BackButton.jsx"
+import { UserMsg } from "./cmps/UserMsg.jsx"
 
 const Router = ReactRouterDOM.HashRouter
 const { Routes, Route, Navigate } = ReactRouterDOM
@@ -29,7 +30,7 @@ export function RootCmp() {
                         {/* <Route path="*" element={<NotFound />} /> */}
                     </Routes>
                 </main>
-                {/* <UserMsg /> */}
+                <UserMsg />
             </section>
         </Router>
     )

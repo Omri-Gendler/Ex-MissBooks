@@ -2,6 +2,7 @@ import { BookList } from "./BookList.jsx"
 import { bookService } from "../services/bookService.js"
 import { BooksFilter } from "../cmps/BookFilter.jsx"
 import { BookDetails } from "./BookDetails.jsx"
+import { eventBusService, USER_MSG } from '../services/event-bus.service.js'
 
 const { useState, useEffect, Fragment } = React
 const { Link, Outlet } = ReactRouterDOM
@@ -34,6 +35,11 @@ export function BookIndex() {
         bookService.remove(BOOK_KEY, bookId)
             .then(() => {
                 setBooks(books => books.filter(book => book.id !== bookId))
+                const msg = {
+                    type: 'success',
+                    txt: 'Book removed'
+                }
+                eventBusService.emit(USER_MSG, msg)
             })
             .catch(err => {
                 console.log('err:', err)
@@ -65,7 +71,12 @@ export function BookIndex() {
         bookService.post(newBook)
             .then(() => {
                 console.log('Book added successfully!')
+                const msg = {
+                    type: 'success',
+                    txt: 'New book added'
+                }
                 loadBooks()
+                eventBusService.emit(USER_MSG, msg)
             })
             .catch(err => {
                 console.error('Failed to add book', err)

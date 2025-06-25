@@ -1,5 +1,5 @@
 import { bookService } from "../services/bookService.js"
-
+import { eventBusService, USER_MSG } from '../services/event-bus.service.js'
 
 const { Link, NavLink } = ReactRouterDOM
 
@@ -7,9 +7,9 @@ const { Link, NavLink } = ReactRouterDOM
 export function BookPreview({ book, onRemoveBook }) {
 
     return (
-        
+
         <article className="book-preview">
-        
+
             <div className="book-image-container"><img src={book.thumbnail} /></div>
             <h3>{book.title}</h3>
             <div className="book-preview-content">
